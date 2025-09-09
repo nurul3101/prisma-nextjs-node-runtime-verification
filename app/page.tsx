@@ -31,15 +31,20 @@ export default function HomePage() {
   }
 
   const testAll = async () => {
-    await testEndpoint('/api/edge', 'Edge Runtime (with Prisma)')
-    await testEndpoint('/api/edge-lightweight', 'Edge Runtime (lightweight)')
-    await testEndpoint('/api/edge-nodejs', 'Node.js Runtime (with Prisma)')  
+    await testEndpoint('/api/edge', 'Edge Runtime (size limit explanation)')
+    await testEndpoint('/api/edge-lightweight', 'Edge Runtime (lightweight - works)')
+    await testEndpoint('/api/edge-nodejs', 'Node.js Runtime (with Prisma - RECOMMENDED)')  
   }
 
   return (
     <main style={{ padding: '2rem', fontFamily: 'system-ui' }}>
-      <h1>Prisma + Vercel Edge Runtime Verification</h1>
-      <p>Testing the exact example from Prisma docs with and without edge runtime</p>
+      <h1>Prisma + Vercel Runtime Verification</h1>
+      <p>Verifying that Node.js runtime works better than Edge runtime for Prisma applications</p>
+      
+      <div style={{ margin: '1rem 0', padding: '1rem', backgroundColor: '#e8f5e8', borderRadius: '8px', border: '1px solid #4caf50' }}>
+        <h3 style={{ margin: '0 0 0.5rem 0', color: '#2e7d32' }}>✅ Key Finding</h3>
+        <p style={{ margin: 0 }}>Node.js runtime works perfectly with Prisma, while Edge runtime has bundle size limitations (1MB limit on free tier).</p>
+      </div>
       
       <div style={{ margin: '2rem 0', backgroundColor: '#f5f5f5', padding: '1rem', borderRadius: '8px' }}>
         <h3>Testing Documentation Example:</h3>
