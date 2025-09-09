@@ -31,8 +31,9 @@ export default function HomePage() {
   }
 
   const testAll = async () => {
-    await testEndpoint('/api/edge', 'Docs Example (Edge Runtime)')
-    await testEndpoint('/api/edge-nodejs', 'Modified Example (Node.js Runtime)')  
+    await testEndpoint('/api/edge', 'Edge Runtime (with Prisma)')
+    await testEndpoint('/api/edge-lightweight', 'Edge Runtime (lightweight)')
+    await testEndpoint('/api/edge-nodejs', 'Node.js Runtime (with Prisma)')  
   }
 
   return (
